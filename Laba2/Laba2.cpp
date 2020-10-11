@@ -32,6 +32,7 @@ public:
             if (ArrNum[i] < 0) 
             {
                 cout << "Есть отрицательные элементы" << endl;
+                return;
             }
         }
     }
