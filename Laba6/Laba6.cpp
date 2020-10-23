@@ -84,4 +84,6 @@ int main()
     cout << endl << "складывание:" << endl << *fv1 + *fv2;
     cout << endl << "инкремент:" << endl << fv1->operator++();
     cout << endl << "декремент:" << endl << --(*fv1);
+    delete fv1;
+    delete fv2;
 }

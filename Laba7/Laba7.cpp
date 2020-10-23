@@ -26,11 +26,11 @@ void sortArray(T array[], int amount)
 int main()
 {
     setlocale(LC_ALL, "rus");
-    int arr[] = { 1, 3, 2, 4, 17, 0 };
+    int arr[] = { 1, 3, 2, 4, 17, 0, };
     double arrD[] = { 1.1, 0.3, 22.5, 4, 17.8, -10 };
-    long arrL[] = { 15646, 654068, 0, -4564, 654, -555};
-    char arrC[] = { 'a', 'b', 'z', 'g', 'a', 'u'};
-    sortArray(arr, sizeof(arr)/sizeof(arr[0]));
+    long arrL[] = { 15646, 654068, 0, -4564, 654, -555 };
+    char arrC[] = { 'a', 'b', 'z', 'g', 'a', 'u' };
+    sortArray(arr, sizeof(arr) / sizeof(arr[0]));
     sortArray(arrD, sizeof(arrD) / sizeof(arrD[0]));
     sortArray(arrC, sizeof(arrC) / sizeof(arrC[0]));
     sortArray(arrL, sizeof(arrL) / sizeof(arrL[0]));

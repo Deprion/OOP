@@ -35,21 +35,49 @@ class Siren : Device, Sound
 public:
 	Siren(string _name, int _power, string _manufacturer, int _frequency, int _volume) :
 		Device(_name, _power, _manufacturer), Sound(_frequency, _volume) {};
+	void Loud() { cout << "Bip" << endl; }
 };
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	cout << "Device:" << endl;
-	Device* dev = new Device("Rock", 10, "Germany");
-	dev->OutputInfo();
-	cout << "Sound:" << endl;
-	Sound* sound = new Sound(144, 8);
-	sound->OutputInfo();
-	cout << "Siren:" << endl;
-	Siren* siren = new Siren("Rock", 10, "Germany", 144, 8);
-	((Device*)siren)->Device::OutputInfo();
-	((Sound*)siren)->Sound::OutputInfo();
-	delete dev;
-	delete sound;
-	delete siren;
+	int input;
+	cout << "1 - создание базовых\n2 - создание производного\n3 - уникальный производного\n4 - методы базовых\n";
+	cin >> input;
+	Device* dev;
+	Sound* sound;
+	Siren* siren;
+	if (input == 1)
+	{
+		cout << "Device created" << endl;
+		Device* dev = new Device("Rock", 10, "Germany");
+		cout << "Sound created" << endl;
+		Sound* sound = new Sound(144, 8);
+		cin >> input;
+		if (input == 2)
+		{
+			cout << "Siren created" << endl;
+			Siren* siren = new Siren("Rock", 10, "Germany", 144, 8);
+			cin >> input;
+			while (true) 
+			{
+				if (input == 3)
+				{
+					siren->Loud();
+				}
+				else if (input == 4)
+				{
+					((Device*)siren)->Device::OutputInfo();
+					((Sound*)siren)->Sound::OutputInfo();
+				}
+				else if (input == 0)
+				{
+					delete dev;
+					delete sound;
+					delete siren;
+					break;
+				}
+				cin >> input;
+			}
+		}
+	}
 }

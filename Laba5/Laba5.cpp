@@ -84,4 +84,6 @@ int main()
     Vector* vector = new Vector(vect);
     Matrix* matrix = new Matrix(matr);
     cout << Func(*vector, *matrix);
+    delete vector;
+    delete matrix;
 }
