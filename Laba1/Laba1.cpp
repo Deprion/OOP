@@ -42,8 +42,7 @@ void InputText(STUDENT* st)
 
 int main()
 {
-    SetConsoleOutputCP(1251);
-    SetConsoleCP(1251);
+    setlocale(LC_ALL, "rus");
     int userInput = 0;
     STUDENT* st = new STUDENT();
     while (userInput != 4)
